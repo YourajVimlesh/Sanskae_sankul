@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sanskar Sankul Palsana</title>
+<style>
+/* GENERAL */
+* { margin:0; padding:0; box-sizing:border-box; }
+body, html { font-family:Arial, sans-serif; scroll-behavior:smooth; }
+
+/* NAVBAR */
+.navbar { display:flex; justify-content:space-between; align-items:center; background:#002D72; color:#fff; padding:12px 24px; position:sticky; top:0; z-index:50; }
+.logo { display:flex; align-items:center; gap:10px; }
+.logo img { width:36px; height:auto; }
+.menu a { color:#fff; text-decoration:none; margin-left:18px; font-weight:700; }
+.menu a:hover { text-decoration:underline; }
+
+/* HERO SLIDESHOW */
+.hero { position:relative; height:90vh; overflow:hidden; }
+.slide { position:absolute; inset:0; background-size:cover; background-position:center; opacity:0; transition: opacity 1s ease-in-out; z-index:1; }
+.slide.show { opacity:1; z-index:2; }
+.overlay { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; text-align:center; z-index:3; background:rgba(0,80,160,0.35); color:#fff; padding:20px; }
+.overlay h1 { font-size:2rem; max-width:750px; margin-bottom:0.5rem; }
+.overlay p { font-style:italic; }
+
+/* SECTIONS */
+section { padding:80px 20px; min-height:60vh; }
+#about { background:#f4f4f4; }
+#gallery { background:#ddd; }
+#academics { background:#eee; }
+
+/* ABOUT & CHAIRMAN */
+.container { max-width:1100px; margin:auto; padding:40px 20px; }
+.chairman { background:#f0f8ff; padding:20px; margin:30px 0; border-left:5px solid #002D72; }
+
+/* FACULTY SLIDESHOW */
+.faculty-slideshow {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 350px; 
+  margin: 30px auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.faculty-slide {
+  position: absolute;
+  inset:0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.faculty-slide.show { opacity: 1; z-index:2; }
+.faculty-slide img {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+}
+.faculty-slide h4, .faculty-slide p {
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  margin: 5px 0;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* GALLERY GRID */
+.gallery-container { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:15px; margin-top:20px; }
+.gallery-container img, .gallery-container video { width:100%; height:150px; object-fit:cover; border-radius:8px; cursor:pointer; transition: transform 0.3s; }
+.gallery-container img:hover, .gallery-container video:hover { transform:scale(1.05); }
+
+/* LIGHTBOX */
+.lightbox { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.9); justify-content:center; align-items:center; z-index:2000; }
+.lightbox-content { max-width:80%; max-height:80%; border-radius:8px; }
+.close { position:absolute; top:20px; right:40px; color:white; font-size:40px; font-weight:bold; cursor:pointer; }
+
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo">
+    <img src="logo.png" alt="logo">
+    <div>Sanskar Sankul Palsana</div>
+  </div>
+  <nav class="menu">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#academics">Academics</a>
+  </nav>
+</header>
+
+<!-- HERO SLIDESHOW -->
+<section class="hero" id="home">
+  <div id="heroSlideA" class="slide"></div>
+  <div id="heroSlideB" class="slide"></div>
+  <div class="overlay">
+    <div class="text-content">
+      <h1>21st Century Skills to Prepare for Today's Modern Workforce</h1>
+      <p>Work Smart. Create. Experience. Embrace Growth.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section id="about">
+  <div class="container">
+    <h2>About Us</h2>
+    <p><strong>20 Years of Growing with a Mission: The Trust School & College</strong></p>
+    <p>Sanskar Campuses is a trusted name in education, blending academic excellence with traditional values.</p>
+    <p>Our approach combines modern teaching methods, digital learning tools and co-curricular activities to ensure well-rounded development for each child.</p>
+
+    <!-- Faculty Slideshow -->
+   <!-- Faculty Slideshow -->
+<h3>Managing Director & Faculty</h3>
+<div class="faculty-slideshow">
+  <div class="faculty-slide">
+    <img src="director.jpg" alt="Mr. Jay Sir">
+    <div class="faculty-info">
+      <h4>Mr. Jay Sir</h4>
+      <p>Managing Director</p>
+    </div>
+  </div>
+  <div class="faculty-slide">
+    <img src="Abhisek.png" alt="Ms. Abhisek Sir">
+    <div class="faculty-info">
+      <h4>Ms. Abhisek Sir</h4>
+      <p>Head of Department</p>
+    </div>
+  </div>
+  <div class="faculty-slide">
+    <img src="Nish.png" alt="Mrs. Nisha Mam">
+    <div class="faculty-info">
+      <h4>Mrs. Nisha Mam</h4>
+      <p>Head Of Department</p>
+    </div>
+  </div>
+  <div class="faculty-slide">
+    <img src="Ankur.png" alt="Ms. Ankur Sir">
+    <div class="faculty-info">
+      <h4>Ms. Ankur Sir</h4>
+      <p>Science Teacher</p>
+    </div>
+  </div>
+  <div class="faculty-slide">
+    <img src="Nilesh.png" alt="Ms. Ankur Sir">
+    <div class="faculty-info">
+      <h4>Ms. Nilesh Sir</h4>
+      <p>Head of Department</p>
+    </div>
+  </div>
+  <div class="faculty-slide">
+    <img src="Nikunj.png" alt="Ms. Ankur Sir">
+    <div class="faculty-info">
+      <h4>Ms. Nikunj Sir</h4>
+      <p>Chemestry Teacher</p>
+    </div>
+  </div>
+  <div class="faculty-slide">
+    <img src="Darmendra.png" alt="Ms. Ankur Sir">
+    <div class="faculty-info">
+      <h4>Ms. Dharmendra Sir</h4>
+      <p>Mathematics Teacher</p>
+    </div>
+  </div>
+  <div class="faculty-slide">
+    <img src="Sriniwas.png" alt="Ms. Ankur Sir">
+    <div class="faculty-info">
+      <h4>Ms. Shreeniwas Sir</h4>
+      <p>Commerce Teacher</p>
+    </div>
+  </div>
+</div>
+
+<style>
+.faculty-slideshow {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 950px; /* enough space for image + info */
+  margin: 30px auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.faculty-slide {
+  position: absolute;
+  top:0; left:0; right:0; bottom:0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.faculty-slide.show { opacity: 1; z-index: 2; }
+
+.faculty-slide img {
+  width: 100%;
+  height: 95%;
+  object-fit: cover;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.faculty-info {
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.faculty-info h4, .faculty-info p {
+  margin: 2px 0;
+}
+</style>
+
+<script>
+const facultySlides = document.querySelectorAll('.faculty-slide');
+let facultyIndex = 0;
+facultySlides[facultyIndex].classList.add('show');
+
+setInterval(()=>{
+  facultySlides[facultyIndex].classList.remove('show');
+  facultyIndex = (facultyIndex + 1) % facultySlides.length;
+  facultySlides[facultyIndex].classList.add('show');
+}, 4000);
+</script>
+
+  </div>
+</section>
+
+<!-- GALLERY SECTION -->
+<section id="gallery">
+  <div class="container">
+    <h2>Gallery</h2>
+    <div class="gallery-container">
+      <img src="galary1.png.jpg" alt="School 1">
+      <img src="galary2.png.jpg" alt="School 2">
+      <video src="Galaryvideo1.mp4" controls></video>
+      <img src="galary3.png.jpg" alt="School 3">
+      <video src="galaryvideo2.mp4" controls></video>
+      <img src="galary4.png.jpg" alt="School 4">
+      <img src="galary5.png.jpg" alt="School 5">
+      <video src="galaryvideo3.mp4" controls></video>
+    </div>
+  </div>
+</section>
+
+<!-- ACADEMICS -->
+<section id="academics">
+  <div class="container">
+    <h2>Academics</h2>
+    <p>Details about academics and curriculum...</p>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox">
+  <span class="close">&times;</span>
+  <img id="lightbox-img" class="lightbox-content">
+</div>
+
+<!-- SCRIPT -->
+<script>
+document.addEventListener('DOMContentLoaded', ()=>{
+
+  // HERO SLIDESHOW
+  const heroImages = ['schooldb.png','schhooldb1.png','schooldb2.png','schooldb3.png'];
+  const slideA = document.getElementById('heroSlideA');
+  const slideB = document.getElementById('heroSlideB');
+  let visible = slideA, hidden = slideB, index = 0;
+  slideA.style.backgroundImage = `url('${heroImages[index]}')`;
+  slideA.classList.add('show');
+  index=(index+1)%heroImages.length;
+  setInterval(()=>{
+    hidden.style.backgroundImage = `url('${heroImages[index]}')`;
+    hidden.classList.add('show'); visible.classList.remove('show');
+    [visible,hidden]=[hidden,visible];
+    index=(index+1)%heroImages.length;
+  },5000);
+
+  // FACULTY SLIDESHOW
+  const facultySlides = document.querySelectorAll('.faculty-slide');
+  let facultyIndex = 0;
+  facultySlides[facultyIndex].classList.add('show');
+  setInterval(()=>{
+    facultySlides[facultyIndex].classList.remove('show');
+    facultyIndex = (facultyIndex+1) % facultySlides.length;
+    facultySlides[facultyIndex].classList.add('show');
+  },4000);
+
+  // LIGHTBOX for gallery
+  const images = document.querySelectorAll('.gallery-container img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const close = document.querySelector('.close');
+
+  images.forEach(img=>{
+    img.addEventListener('click',()=>{
+      lightbox.style.display='flex';
+      lightboxImg.src=img.src;
+    });
+  });
+
+  close.addEventListener('click',()=>{ lightbox.style.display='none'; });
+  window.addEventListener('click',(e)=>{ if(e.target===lightbox){ lightbox.style.display='none'; } });
+
+});
+</script>
+
+</body>
+</html>
